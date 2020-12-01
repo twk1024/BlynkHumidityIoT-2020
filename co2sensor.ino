@@ -1,4 +1,3 @@
-
 #define BLYNK_PRINT Serial
 #include <ESP8266WiFi.h>
 #include <BlynkSimpleEsp8266.h>
@@ -23,7 +22,6 @@ dht11 DHT11;
 
 #define DHT11PIN D5                     
 
- 
 
 void setup()
 {
@@ -38,8 +36,7 @@ void setup()
 
   pinMode(D0, OUTPUT);
   pinMode(D4, OUTPUT);
-
-  Serial.println("DHT11 TEST PROGRAM ");        
+        
   Serial.print("LIBRARY VERSION: ");               
   Serial.println(DHT11LIB_VERSION);                 
   Serial.println();     
@@ -79,7 +76,7 @@ void loop()
   delay(2000); // 2초 지연
 
 
-  //notify
+  // notify
    if (mhz.getCO2() > 800)
   {
     Blynk.notify("CO2 - 800ppm 초과");
